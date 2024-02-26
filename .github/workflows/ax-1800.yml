@@ -90,8 +90,10 @@ jobs:
         COMMIT_HASH=$(git show -s --date=short --format="hash: %H")
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_OUTPUT
-        cat $GITHUB_WORKSPACE/mk.txt >>  ./target/linux/qualcommax/image/ipq60xx.mk 
+        cat $GITHUB_WORKSPACE/mk.txt >>  ./target/linux/qualcommax/image/ipq60xx.mk
+        cat ./target/linux/qualcommax/image/ipq60xx.mk
         cp $GITHUB_WORKSPACE/ipq6018-jdc-ax1800-pro.dts ./target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/
+        ls ./target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/
 
     - name: Generate Variables
       id: variable
